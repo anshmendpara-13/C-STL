@@ -1,0 +1,51 @@
+-   Construct set
+Constructs a set container object, initializing its contents depending on the constructor version used:
+
+C++98C++11
+(1) empty container constructors (default constructor)
+Constructs an empty container, with no elements.
+(2) range constructor
+Constructs a container with as many elements as the range [first,last), with each element emplace-constructed from its corresponding element in that range.
+(3) copy constructor (and copying with allocator)
+Constructs a container with a copy of each of the elements in x.
+(4) move constructor (and moving with allocator)
+Constructs a container that acquires the elements of x.
+If alloc is specified and is different from x's allocator, the elements are moved. Otherwise, no elements are constructed (their ownership is directly transferred).
+x is left in an unspecified but valid state.
+(5) initializer list constructor
+Constructs a container with a copy of each of the elements in il.
+
+The container keeps an internal copy of alloc, which is used to allocate and deallocate storage for its elements, and to construct and destroy them (as specified by its allocator_traits). If no alloc argument is passed to the constructor, a default-constructed allocator is used, except in the following cases:
+- The copy constructor (3, first signature) creates a container that keeps and uses a copy of the allocator returned by calling the appropriate selected_on_container_copy_construction trait on x's allocator.
+- The move constructor (4, first signature) acquires x's allocator.
+
+The container also keeps an internal copy of comp (or x's comparison object), which is used to establish the order of the elements in the container and to check for equivalent elements.
+
+All elements are copied, moved or otherwise constructed by calling allocator_traits::construct with the appropriate arguments.
+
+The elements are sorted according to the comparison object. If more than one equivalent element is passed to the constructor, only the first one is preserved.
+
+-   Parameters
+comp
+Binary predicate that, taking two values of the same type of those contained in the set, returns true if the first argument goes before the second argument in the strict weak ordering it defines, and false otherwise.
+This shall be a function pointer or a function object.
+Member type key_compare is the internal comparison object type used by the container, defined in set as an alias of its second template parameter (Compare).
+If key_compare uses the default less (which has no state), this parameter is not relevant.
+
+alloc
+Allocator object.
+The container keeps and uses an internal copy of this allocator.
+Member type allocator_type is the internal allocator type used by the container, defined in set as an alias of its third template parameter (Alloc).
+If allocator_type is an instantiation of the default allocator (which has no state), this parameter is not relevant.
+
+first, last
+Input iterators to the initial and final positions in a range. The range used is [first,last), which includes all the elements between first and last, including the element pointed by first but not the element pointed by last.
+The function template argument InputIterator shall be an input iterator type that points to elements of a type from which value_type objects can be constructed.
+
+x
+Another set object of the same type (with the same class template arguments T, Compare and Alloc), whose contents are either copied or acquired.
+
+il
+An initializer_list object.
+These objects are automatically constructed from initializer list declarators.
+Member type value_type is the type of the elements in the container, defined in set as an alias of its first template parameter (T).

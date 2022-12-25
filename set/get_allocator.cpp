@@ -1,0 +1,31 @@
+// set::get_allocator
+#include <iostream>
+#include <set>
+
+using namespace std;
+
+int main()
+{
+    set<int> myset;
+    int *p;
+    unsigned int i;
+
+    // allocate an array of 5 elements using myset's allocator:
+    p = myset.get_allocator().allocate(5);
+
+    // assign some values to array
+    for (i = 0; i < 5; i++)
+    {
+        p[i] = (i + 1) * 10;
+    }
+
+    cout << "The allocated array contains:";
+    for (i = 0; i < 5; i++)
+    {
+        cout << ' ' << p[i];
+        // cout << '\n';
+    }
+    myset.get_allocator().deallocate(p, 5);
+
+    return 0;
+}
