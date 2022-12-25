@@ -1,0 +1,8 @@
+load_factor
+max_bucket_factor
+max_load_factor
+max_size
+rehash
+swap
+size
+are already in the map 
