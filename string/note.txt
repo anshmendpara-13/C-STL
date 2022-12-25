@@ -1,0 +1,3 @@
+-   strrchr(str,str1)
+this function are search str1 in str and then breck the string and print the after str1 string 
+
