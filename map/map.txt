@@ -1,0 +1,37 @@
+-   maps are associative containers that store elements formed by a conbination of a key value and a mapped value, following a specific order.
+-   in a map, the key value are generally used to sort and uniquely identify the elements, while the mapped values store the content associated 
+    to this key. the types of key and mapped value may differ, and are grouped together in member type value_type, which is a pair type 
+    combining both :-
+-   typedef pair<const key, T> value_type;
+-   internally, the elemets in map are always sorted by its key following a specific strict weak ordering criterion indicated by its internal 
+    comparison object (of type compare).
+-   map containers are generally slower the unordered_map containers to access individual elements by their key, but they allow the direct 
+    iteration on subsets based on their order.
+-   the mapped value in a map can be accessed directly by their corresponding key using the bracket operator.
+-   maps are typically implemented as binary search trees.
+
+* container properties
+-   Associative
+Elements in associative containers are referenced by their key and not by their absolute position in the container.
+-   Ordered
+The elements in the container follow a strict order at all times. All inserted elements are given a position in this order.
+-   Map
+Each element associates a key to a mapped value: Keys are meant to identify the elements whose main content is the mapped value.
+-   Unique keys
+No two elements in the container can have equivalent keys.
+-   Allocator-aware
+The container uses an allocator object to dynamically handle its storage needs.
+
+-   bidirectional iterator category
+-   input <- forward <- bidirectional <- random access <- output
+-   Bidirectional iterators are iterators that can be used to access the sequence of elements in a range in both directions
+-   There is not a single type of bidirectional iterator: Each container may define its own specific iterator type able to 
+    iterate through it and access its elements
+
+-   key
+type of the keys. each element in a map is uniquely identify by its key value.
+aliased as member type map :: key_type.
+
+-   T
+type of the mapped value. each element in map stores some data as its mapped value. 
+aliased as member type map :: mapped_type

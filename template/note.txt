@@ -1,0 +1,42 @@
+-   a template is a simple yet very powerful tool in c++.
+-   the simple idea is to pass data type as a parameter so that wwe don't need to write the same code for different data type.
+-   for example: a software company may need to sort() for different data type.
+-   rather than writting and maintaining multiple condes, we can write one sort() and pass data type as a pareameter.
+-   c++ adds two new keywords to support template: 'template' and 'typename'.
+-   the second keyword can always be replaced by the keyword 'class'.
+
+how do template work?
+-   template are expanded at compiler time.
+-   this is like macros. 
+-   the difference is, that the compiler does type checking before template expansion.
+-   the idea is simple, source code contains only function but compiled code may contain multiple copies of the same function.
+
+
+Function Templates We write a generic function that can be used for different data types. 
+Examples of function templates are sort(), max(), min(), printArray(). 
+
+what is the difference between function overloading and template?
+-   both function overloading and template are examples of polymorphism features of oops.
+-   function overloading is used when multiple function do quite similar (not identical) operations, templates are used when multiple functions do identical operations.
+
+what happen when there is a static member in a template class/function?
+-   each instance of a template contains its own staitc variable.
+-   see templates and staitc variable for more details.
+
+What is template specialization? 
+-   Template specialization allows us to have different codes for a particular data type. 
+-   See Template Specialization for more details.
+
+Can we pass non type parameters to templates? 
+We can pass non-type arguments to templates. 
+-   Non-type parameters are mainly used for specifying max or min values or any other constant value for a particular instance of a template. 
+-   The important thing to note about non-type parameters is, that they must be const. 
+-   The compiler must know the value of non-type parameters at compile time. 
+-   Because the compiler needs to create functions/classes for a specified non-type value at compile time. 
+-   In the below program, if we replace 10000 or 25 with a variable, we get a compiler error.
+
+CONSTRUCTOR:-
+-   c++ CONSTRUCTOR.
+-   constuctores are methods that are automatically executed every time youcreate an object.
+-   the purpose of a contructor iss o consruct an object and assign values to the object's members.
+-   A constuctore takes the same name as the class to which it belongs, and does not return any values.
