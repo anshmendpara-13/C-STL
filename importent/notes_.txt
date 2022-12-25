@@ -1,0 +1,4 @@
+-   Maximum size of the array: We must be knowing that the maximum size of the array declared inside the main function is of the order of 10^6 
+but if you declare the array globally then you can declare its size up to 10^7. 
+-   vectors are same as dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted, with their  storage
+being handled automatically by the container.
