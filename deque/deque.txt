@@ -1,0 +1,25 @@
+double ended
+dynamic size 
+contracted on both ends either its front or its back
+specific libraries may implement deques in different ways fenerally as some form of dynamic array
+they allow for the individual element to be accessed directly through random access iterators
+they similar function like vector
+the container uses an allocator object to dynamically handle its storage needs
+{
+    Template
+
+    T
+    type of the element
+    aliased as member type deque :: value_type
+    
+    allocator_type
+    the second Template parameter(alloc)
+    defaults to
+    (allocator<value_type>)
+}   
+
+input iterators to the initial and final position in a range
+the range used is [first,last) 
+this includes all the element between first and last 
+including the element pointed by first but not the element pointed by last
+

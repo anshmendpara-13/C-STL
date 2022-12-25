@@ -1,0 +1,23 @@
+constructs a stack container adaptor object
+a stack of the same type (i.e, with the same template arguement, T and container)
+
+stack in STL
+stack are a type of container adaptors with lifo (last in first out) type of working,
+where a new element is added at one end(top) and an element is removed from that end only.
+stack uses an encapsulated object of either vector or deque (by default) or list (sequential coantainer)
+as its underlying container, providing a specific of member functions to access its element
+
+for creating a stack, we must include the <stack> header file in our code.
+we then use this syntax to define the :- stack
+
+->  template<class type,class container = deque<type> class stack;
+
+type - is the type of element container in the stack.
+it can be any valid c++ type or even a user-defined type.
+
+coantainer - is the type of underlying container object.
+
+member type :-
+value_type - the first template parameter, T. it denotes the element type.
+container_type - the second template parameter, container. it denotes the underlying container type.
+size_type - usigned intergral type.
