@@ -1,0 +1,27 @@
+// vector::back
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+    vector<int> myvector;
+
+    myvector.push_back(10);
+
+    while (myvector.back() != 0)
+    {
+        myvector.push_back(myvector.back() - 1);
+        // above line add last - 1 in the last position
+        // previous 10 are already in the myvector
+    }
+
+    cout << "myvector contains:";
+    for (unsigned i = 0; i < myvector.size(); i++)
+    {
+        cout << ' ' << myvector[i];
+        //   cout << '\n';
+    }
+    return 0;
+}

@@ -1,0 +1,21 @@
+construct vector
+-   empty container construct
+construct an empty.   
+container with no elements
+-   fill construct
+constructs a container with n elements.
+each elements is a copy of val.
+-   range
+[first, last)
+emplace-constructed from its corresponding element in the range, in the same order
+-   copy constructor
+constructs a container with a copy of each of the elements in x, in the same order
+
+vector in STL
+-   vector are the same as dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted
+,with their storage being handled automatically by the container. vector elements are placed in continuous storage so that they
+can be accessed and traversed using iterators.
+-   in vector, data is inserted at the end.
+-   inserting at the end takes differential time, as sometimes the array may need to be extended.
+-   removing the last element takes only constant time because no resizing happens.
+-   inserting and erasing at the beginning or in the middle is linear in time.
