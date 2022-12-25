@@ -1,0 +1,12 @@
+Generate quiet NaN
+Returns a quiet NaN (Not-A-Number) value of type double.
+The NaN values are used to identify undefined or non-representable values for floating-point elements, such as the square root of negative numbers or the result of 0/0.
+
+The next representable value after x in the direction of y.
+If x is the largest finite value representable in the type, and the result is infinite or not representable, an overflow range error occurs.
+function use : - nextafeter
+funciton use : - nexttowards
+first representable value greater than zero: 4.940656e-324
+first representable value less than zero: -4.940656e-324
+
+also check signbit function
