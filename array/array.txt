@@ -1,0 +1,9 @@
+array are sequnce container of fixed size
+store same data type
+but some times array increase the size by input size
+
+operation	equivalent operation
+a!=b	        !(a==b)
+a>b	            b<a
+a<=b	        !(b<a)
+a>=b	        !(a<b)
